@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Slap Room – Video Downloader</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-hand" viewBox="0 0 36 36" fill="none">
+      <path d="M18 4C15 4 13 6 13 9v9l-2-1.5C9.5 15.5 7.5 16.5 7.5 18.5c0 1.5 1 3 2 4l4.5 5.5C15.5 30 17 31 19 31h5c3 0 5-2 5-5V13c0-2.5-2-4-4-4v0c-1 0-2 .5-2.5 1.2C22 9.5 21 9 20 9c-1 0-1.8.5-2 1.2C17.5 9.3 17 9 16.5 9" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M13 9c0-2.8 2.2-5 5-5s5 2.2 5 5v9" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M18 9v9M22 10v8" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="7" y="14" width="6" height="16" rx="3" fill="#00d9c0" opacity="0.12"/>
+    </svg>
+    <span class="logo-text">The Slap Room</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.querySelector('.url-input').focus(); window.scrollTo({top:0,behavior:'smooth'})">Download Now</button>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="hero-badge">⚡ No watermarks · No login needed · Free</div>
+    <h1>Download videos<br><span>without limits</span></h1>
+    <p class="hero-sub">Paste any link from Instagram, Facebook, TikTok, YouTube, Twitter and more — get your video instantly, no watermarks, no sign-up.</p>
+
+    <div class="platform-pills">
+      <div class="pill active" onclick="setPlatform(this,'instagram')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Instagram
+      </div>
+      <div class="pill" onclick="setPlatform(this,'facebook')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </div>
+      <div class="pill" onclick="setPlatform(this,'tiktok')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        TikTok
+      </div>
+      <div class="pill" onclick="setPlatform(this,'youtube')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        YouTube
+      </div>
+      <div class="pill" onclick="setPlatform(this,'twitter')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X (Twitter)
+      </div>
+      <div class="pill" onclick="setPlatform(this,'pinterest')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        Pinterest
+      </div>
+      <div class="pill" onclick="setPlatform(this,'vimeo')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.48 4.807l-.001.014z"/></svg>
+        Vimeo
+      </div>
+    </div>
+
+    <div class="input-card">
+      <div class="input-row">
+        <input type="url" class="url-input" id="videoUrl" placeholder="Paste video URL here (e.g. https://instagram.com/reel/...)" autocomplete="off">
+        <button class="paste-btn" onclick="pasteUrl()">📋 Paste</button>
+      </div>
+      <button class="download-btn" id="downloadBtn" onclick="processUrl()">
+        <span id="btnText">⚡ Get Download Links</span>
+      </button>
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <!-- Backend error message -->
+      <div class="api-error" id="apiError"></div>
+    </div>
+
+    <div class="result-card" id="resultCard">
+      <div class="result-header">
+        <div class="result-thumb" id="resultThumb">🎬</div>
+        <div class="result-meta">
+          <h3 id="resultTitle">Video detected</h3>
+          <p id="resultMeta">Ready to download</p>
+        </div>
+      </div>
+      <div class="format-grid" id="formatGrid"></div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="section-label">How it works</div>
+    <div class="section-title">Three steps,<br>instant results</div>
+    <p class="section-sub">No software to install. No account to create. Just paste, pick your format, and download.</p>
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">🔗</div>
+        <h3>Copy the link</h3>
+        <p>Grab the URL from any video on Instagram, Facebook, TikTok, YouTube, Twitter, Pinterest, or Vimeo.</p>
+      </div>
+      <div class="how-card reveal" style="transition-delay:0.1s">
+        <div class="step-num">02</div>
+        <div class="step-icon">⚡</div>
+        <h3>Paste and fetch</h3>
+        <p>Paste the URL in the box above and hit "Get Download Links" — we'll analyse the video in seconds.</p>
+      </div>
+      <div class="how-card reveal" style="transition-delay:0.2s">
+        <div class="step-num">03</div>
+        <div class="step-icon">📥</div>
+        <h3>Choose your format</h3>
+        <p>Pick from HD, FHD, 4K, or audio-only. Download the file directly, clean with no watermark.</p>
+      </div>
+      <div class="how-card reveal" style="transition-delay:0.3s">
+        <div class="step-num">04</div>
+        <div class="step-icon">✨</div>
+        <h3>Done — no watermarks</h3>
+        <p>Your video saves to your device exactly as it was uploaded — original quality, zero branding overlay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms -->
+  <section id="platforms" style="padding-top:0">
+    <div class="section-label">Supported platforms</div>
+    <div class="section-title">Works everywhere<br>you watch</div>
+    <p class="section-sub">One tool for every major video platform. More added regularly.</p>
+    <div class="platform-grid">
+      <div class="platform-card reveal" onclick="focusWithPlatform('instagram')">
+        <div class="platform-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">📸</div>
+        <h4>Instagram</h4><p>Reels, posts, Stories</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('facebook')" style="transition-delay:0.05s">
+        <div class="platform-icon" style="background:#1877f2">📘</div>
+        <h4>Facebook</h4><p>Videos, Reels, Live</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('tiktok')" style="transition-delay:0.1s">
+        <div class="platform-icon" style="background:#010101">🎵</div>
+        <h4>TikTok</h4><p>All videos, no logo</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('youtube')" style="transition-delay:0.15s">
+        <div class="platform-icon" style="background:#ff0000">▶️</div>
+        <h4>YouTube</h4><p>Videos, Shorts, clips</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('twitter')" style="transition-delay:0.2s">
+        <div class="platform-icon" style="background:#000000">𝕏</div>
+        <h4>X / Twitter</h4><p>Videos, GIFs</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('pinterest')" style="transition-delay:0.25s">
+        <div class="platform-icon" style="background:#e60023">📌</div>
+        <h4>Pinterest</h4><p>Video pins</p>
+      </div>
+      <div class="platform-card reveal" onclick="focusWithPlatform('vimeo')" style="transition-delay:0.3s">
+        <div class="platform-icon" style="background:#1ab7ea">🎞️</div>
+        <h4>Vimeo</h4><p>HD & 4K videos</p>
+      </div>
+      <div class="platform-card reveal" style="transition-delay:0.35s; border-style:dashed; cursor:default">
+        <div class="platform-icon" style="background:rgba(0,217,192,0.1)">➕</div>
+        <h4>More soon</h4><p>Dailymotion, Twitch...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding-top:0">
+    <div class="section-label">Features</div>
+    <div class="section-title">Everything you need,<br>nothing you don't</div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚫</div>
+        <div><h4>No watermarks, ever</h4><p>Downloads are clean original files. No app logo, no overlay, no branding from us or the platform.</p></div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.1s">
+        <div class="feature-icon">🔐</div>
+        <div><h4>No login required</h4><p>Paste the URL and go. We don't ask for your social account credentials or any personal info.</p></div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.2s">
+        <div class="feature-icon">🎬</div>
+        <div><h4>Multiple quality options</h4><p>Choose from 360p, 720p HD, 1080p FHD, 4K Ultra HD, or audio-only MP3 extraction.</p></div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.3s">
+        <div class="feature-icon">⚡</div>
+        <div><h4>Instant processing</h4><p>Video links are fetched in seconds. No waiting, no queuing, no slow servers.</p></div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.4s">
+        <div class="feature-icon">📱</div>
+        <div><h4>Works on any device</h4><p>Mobile, tablet, or desktop — the interface adapts and downloads go straight to your camera roll.</p></div>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:0.5s">
+        <div class="feature-icon">💸</div>
+        <div><h4>Completely free</h4><p>No hidden fees, no premium tier, no download limits. Just free video downloading, full stop.</p></div>
+      </div>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Supported platforms</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-label">Accounts needed</div></div>
+      <div class="stat"><div class="stat-num">4K</div><div class="stat-label">Max resolution</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Watermark-free</div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0; max-width:700px">
+    <div class="section-label">FAQ</div>
+    <div class="section-title">Questions answered</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this tool really free? <span class="chevron">▾</span></button>
+        <div class="faq-a">Yes, completely free. No credit card, no subscription, no ads. The Slap Room downloader is fully free for personal use with no download limits.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need to install anything? <span class="chevron">▾</span></button>
+        <div class="faq-a">No installation required. This runs entirely in your browser. Just paste the link, click the button, and save your file.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why are there no watermarks on the downloads? <span class="chevron">▾</span></button>
+        <div class="faq-a">We access the original video source directly from the platform's servers, before any watermark is applied client-side. TikTok in particular adds watermarks for in-app saves — we bypass that entirely.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is it safe to paste my link here? <span class="chevron">▾</span></button>
+        <div class="faq-a">Totally safe. We only use the URL to identify and fetch the public video. We don't store your links, don't log your activity, and don't require any account access.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What video formats are available? <span class="chevron">▾</span></button>
+        <div class="faq-a">We offer MP4 in 360p, 720p, 1080p, and 4K (where the source supports it), plus MP3 audio extraction. The options shown depend on what quality the original video was uploaded in.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I download private videos? <span class="chevron">▾</span></button>
+        <div class="faq-a">No — we can only download publicly accessible videos. Private content requires account authentication, which we intentionally don't support for privacy reasons.</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding: 0 2rem">
+    <div class="cta-section reveal">
+      <h2>Ready to start slapping videos?</h2>
+      <p>Paste your first link above — it takes about 3 seconds.</p>
+      <button class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('.url-input').focus(),600)">Download a video now</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+        <path d="M18 4C15 4 13 6 13 9v9l-2-1.5C9.5 15.5 7.5 16.5 7.5 18.5c0 1.5 1 3 2 4l4.5 5.5C15.5 30 17 31 19 31h5c3 0 5-2 5-5V13c0-2.5-2-4-4-4v0c-1 0-2 .5-2.5 1.2C22 9.5 21 9 20 9c-1 0-1.8.5-2 1.2C17.5 9.3 17 9 16.5 9" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 9c0-2.8 2.2-5 5-5s5 2.2 5 5v9" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 9v9M22 10v8" stroke="#00d9c0" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      The Slap Room
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#how">How it works</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#faq">FAQ</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div style="font-size:0.78rem">© 2026 The Slap Room. For personal use only.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
